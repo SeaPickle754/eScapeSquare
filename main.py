@@ -10,12 +10,15 @@ import pygame
 
 # Variable to keep our game loop running 
 running = True
+screen = None
+background_colour = (159, 189, 237)
 
 def init():
+    global screen
 
 # Define the background colour 
 # using RGB color coding. 
-    background_colour = (255, 255, 0) 
+     
   
 # Define the dimensions of 
 # screen object(width,height) 
@@ -24,19 +27,22 @@ def init():
 # Set the caption of the screen 
     pygame.display.set_caption('eScapeSquare') 
   
-# Fill the background colour to the screen 
+
+    mainloop()
+
+def draw():
+    # Fill the background colour to the screen 
     screen.fill(background_colour) 
   
 # Update the display using flip 
     pygame.display.flip() 
-    mainloop()
 
 def mainloop():
     global running
     running = True
     # game loop 
     while running: 
-    
+        draw() 
 # for loop through the event queue   
         for event in pygame.event.get(): 
       
